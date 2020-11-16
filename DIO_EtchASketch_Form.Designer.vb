@@ -27,7 +27,7 @@ Partial Class DIO_EtchASketch_Form
         Me.selectcolorButton = New System.Windows.Forms.Button()
         Me.drawwaveformsButton = New System.Windows.Forms.Button()
         Me.clearButton = New System.Windows.Forms.Button()
-        Me.pictureBox = New System.Windows.Forms.PictureBox()
+        Me.CanvasBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -47,7 +47,7 @@ Partial Class DIO_EtchASketch_Form
         Me.ClearToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.pictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CanvasBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -92,14 +92,14 @@ Partial Class DIO_EtchASketch_Form
         Me.ToolTip1.SetToolTip(Me.clearButton, "Erase drawing")
         Me.clearButton.UseVisualStyleBackColor = True
         '
-        'pictureBox
+        'CanvasBox
         '
-        Me.pictureBox.Location = New System.Drawing.Point(12, 27)
-        Me.pictureBox.Name = "pictureBox"
-        Me.pictureBox.Size = New System.Drawing.Size(625, 411)
-        Me.pictureBox.TabIndex = 4
-        Me.pictureBox.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.pictureBox, "Draw some shit.")
+        Me.CanvasBox.Location = New System.Drawing.Point(12, 27)
+        Me.CanvasBox.Name = "CanvasBox"
+        Me.CanvasBox.Size = New System.Drawing.Size(625, 411)
+        Me.CanvasBox.TabIndex = 4
+        Me.CanvasBox.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.CanvasBox, "Draw some shit.")
         '
         'MenuStrip1
         '
@@ -223,7 +223,7 @@ Partial Class DIO_EtchASketch_Form
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.pictureBox)
+        Me.Controls.Add(Me.CanvasBox)
         Me.Controls.Add(Me.clearButton)
         Me.Controls.Add(Me.drawwaveformsButton)
         Me.Controls.Add(Me.selectcolorButton)
@@ -232,7 +232,7 @@ Partial Class DIO_EtchASketch_Form
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "DIO_EtchASketch_Form"
         Me.Text = "Form1"
-        CType(Me.pictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CanvasBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
@@ -246,7 +246,7 @@ Partial Class DIO_EtchASketch_Form
     Friend WithEvents selectcolorButton As Button
     Friend WithEvents drawwaveformsButton As Button
     Friend WithEvents clearButton As Button
-    Friend WithEvents pictureBox As PictureBox
+    Friend WithEvents CanvasBox As PictureBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
