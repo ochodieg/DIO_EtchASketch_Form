@@ -40,6 +40,7 @@ Public Class DIO_EtchASketch_Form
         End If
         xCoordinate = x
         yCoordinate = y
+
     End Sub
 
 End Class
