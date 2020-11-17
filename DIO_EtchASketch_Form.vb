@@ -21,11 +21,12 @@ Public Class DIO_EtchASketch_Form
         End If
     End Sub
     Private Sub CanvasBox_Noclick(sender As Object, e As MouseEventArgs) Handles CanvasBox.MouseUp
-        'Removes Reference point to draw if mouse is unclicked
         xCoordinate = 0
         yCoordinate = 0
+        'allows last drawn line to remain unaltered if new line is drawn
     End Sub
     Sub PaintDo(x As Integer, y As Integer)
+        'allows mouse to draw
         visuals = CanvasBox.CreateGraphics
         If xCoordinate = Nothing Then
             visuals.DrawLine(paintBrush, x, y, x, y)
@@ -35,7 +36,6 @@ Public Class DIO_EtchASketch_Form
         xCoordinate = x
         yCoordinate = y
     End Sub
-
     Sub delete(x As Integer, y As Integer)
         visuals = CanvasBox.CreateGraphics
         If xCoordinate = Nothing Then
@@ -45,6 +45,7 @@ Public Class DIO_EtchASketch_Form
         End If
         xCoordinate = x
         yCoordinate = y
+        'allows the "left mouse" to erase 
     End Sub
     Sub CanvasMouseMovement(sender As Object, e As MouseEventArgs) Handles CanvasBox.MouseDown, CanvasBox.MouseMove
         ActiveControl = CanvasBox
@@ -55,26 +56,25 @@ Public Class DIO_EtchASketch_Form
         ElseIf e.Button.ToString = "Middle" Then
             ColorSelect()
         End If
+        'allows the "left, middle, right - mouse" functions to enable on form. This is donw by calling upon them as a string. Recall CarrentalForm where e is dimmed as MouseEventArgs and the "ToString" allows functions to be called upon as strings [?].
     End Sub
     Private Sub SelectColorButton_Click(sender As Object, e As EventArgs) Handles selectcolorButton.Click
         ColorSelect()
+        'selectColorButton calls upon the colorSelect sub
     End Sub
     Sub ColorSelect()
         ColorDialogSelect.ShowDialog()
         paintBrush.Color = ColorDialogSelect.Color
-
+        'opens color select tool
     End Sub
-
     Private Sub ColorToolStripMenuItem_Click(sender As Object, e As EventArgs)
         ColorSelect()
     End Sub
-
     Public Sub ClearButton_Click(sender As Object, e As EventArgs) Handles clearButton.Click
         ClearBoard()
     End Sub
-
     Private Sub DrawwaveformsButton_Click(sender As Object, e As EventArgs) Handles drawwaveformsButton.Click
-        'Clears Graphics.
+        'Clears Graphics before calling upon the DrawWaveforms sub
         If visuals IsNot Nothing Then
             visuals.Clear(Color.FromName("Control"))
         End If
@@ -127,22 +127,18 @@ Public Class DIO_EtchASketch_Form
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Exitshiz()
     End Sub
-
     Private Sub DrawWaveformToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DrawWaveformToolStripMenuItem.Click
         If visuals IsNot Nothing Then
             visuals.Clear(Color.FromName("Control"))
         End If
         DrawWaveforms()
     End Sub
-
     Private Sub DrawWaveformToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DrawWaveformToolStripMenuItem1.Click
         DrawWaveforms()
     End Sub
-
     Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click
         ClearBoard()
     End Sub
-
     Private Sub SelectColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectColorToolStripMenuItem.Click
         ColorSelect()
     End Sub
@@ -151,8 +147,9 @@ Public Class DIO_EtchASketch_Form
     '    Dim dialog As MsgBoxResult
     '    dialog = MsgBox()
     'End Sub
-
     Sub ClearBoard()
+        Dim dialogOne As MsgBoxResult
+        dialogOne = MsgBox("CLEARING!!!!!!")
         'This For loop 'shakes' the drawing picturebox.
         For i = 1 To 100
             CanvasBox.Left = CanvasBox.Left + 5
@@ -163,10 +160,50 @@ Public Class DIO_EtchASketch_Form
             CanvasBox.Top = CanvasBox.Top + 10
             CanvasBox.Left = CanvasBox.Left - 5
             CanvasBox.Top = CanvasBox.Top - 5
+            CanvasBox.Left = CanvasBox.Left + 25
+            CanvasBox.Top = CanvasBox.Top + 25
+            CanvasBox.Left = CanvasBox.Left - 50
+            CanvasBox.Top = CanvasBox.Top - 50
+            CanvasBox.Left = CanvasBox.Left + 50
+            CanvasBox.Top = CanvasBox.Top + 50
+            CanvasBox.Left = CanvasBox.Left - 25
+            CanvasBox.Top = CanvasBox.Top - 25
+            CanvasBox.Left = CanvasBox.Left + 35
+            CanvasBox.Top = CanvasBox.Top + 35
+            CanvasBox.Left = CanvasBox.Left - 60
+            CanvasBox.Top = CanvasBox.Top - 60
+            CanvasBox.Left = CanvasBox.Left + 60
+            CanvasBox.Top = CanvasBox.Top + 60
+            CanvasBox.Left = CanvasBox.Left - 35
+            CanvasBox.Top = CanvasBox.Top - 35
+            CanvasBox.Left = CanvasBox.Left + 55
+            CanvasBox.Top = CanvasBox.Top + 55
+            CanvasBox.Left = CanvasBox.Left - 80
+            CanvasBox.Top = CanvasBox.Top - 80
+            CanvasBox.Left = CanvasBox.Left + 80
+            CanvasBox.Top = CanvasBox.Top + 80
+            CanvasBox.Left = CanvasBox.Left - 55
+            CanvasBox.Top = CanvasBox.Top - 55
         Next
+        Dim dialog As MsgBoxResult
+        dialog = MsgBox("all clear :>")
+
         'Clears the graphics.
         If visuals IsNot Nothing Then
             visuals.Clear(Color.FromName("Control"))
         End If
     End Sub
+    'Sub Leftclick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+    '    '"e" is dimed as mouse event argument where mouse event arguments contain mouse info like: position, click, button pressed ..etc.
+    '    If e.Button = MouseButtons.Right Then
+    '        'If e.Button.ToString = "right" Then 
+    '        'if mouse button clicked is the right mouse button.
+    '        ContextMenuStrip.Show()
+    '        ContextMenuStrip.Location = MousePosition
+    '        'allows the context menu strip to appear where the position of the mouse was when right mouse button was clicked
+
+    '    End If
+
+    'End Sub
+
 End Class
