@@ -48,6 +48,15 @@ Partial Class DIO_EtchASketch_Form
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ColorDialogSelect = New System.Windows.Forms.ColorDialog()
+        Me.BrushSizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DefaultBrushToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MediumBrushToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LargeBrushToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EraserSizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DefaultSizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MediumEraserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LargeEraserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FineEraserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.CanvasBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -126,7 +135,7 @@ Partial Class DIO_EtchASketch_Form
         '
         'EditToolStripMenuItem
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectColorToolStripMenuItem, Me.DrawWaveformToolStripMenuItem, Me.ClearToolStripMenuItem})
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectColorToolStripMenuItem, Me.DrawWaveformToolStripMenuItem, Me.ClearToolStripMenuItem, Me.BrushSizeToolStripMenuItem, Me.EraserSizeToolStripMenuItem})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.EditToolStripMenuItem.Text = "Edit"
@@ -219,6 +228,62 @@ Partial Class DIO_EtchASketch_Form
         Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
         '
+        'BrushSizeToolStripMenuItem
+        '
+        Me.BrushSizeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DefaultBrushToolStripMenuItem, Me.MediumBrushToolStripMenuItem, Me.LargeBrushToolStripMenuItem})
+        Me.BrushSizeToolStripMenuItem.Name = "BrushSizeToolStripMenuItem"
+        Me.BrushSizeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BrushSizeToolStripMenuItem.Text = "Brush Size"
+        '
+        'DefaultBrushToolStripMenuItem
+        '
+        Me.DefaultBrushToolStripMenuItem.Name = "DefaultBrushToolStripMenuItem"
+        Me.DefaultBrushToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DefaultBrushToolStripMenuItem.Text = "Default Brush"
+        '
+        'MediumBrushToolStripMenuItem
+        '
+        Me.MediumBrushToolStripMenuItem.Name = "MediumBrushToolStripMenuItem"
+        Me.MediumBrushToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MediumBrushToolStripMenuItem.Text = "Medium Brush"
+        '
+        'LargeBrushToolStripMenuItem
+        '
+        Me.LargeBrushToolStripMenuItem.Name = "LargeBrushToolStripMenuItem"
+        Me.LargeBrushToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LargeBrushToolStripMenuItem.Text = "Large Brush"
+        '
+        'EraserSizeToolStripMenuItem
+        '
+        Me.EraserSizeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DefaultSizeToolStripMenuItem, Me.MediumEraserToolStripMenuItem, Me.LargeEraserToolStripMenuItem, Me.FineEraserToolStripMenuItem})
+        Me.EraserSizeToolStripMenuItem.Name = "EraserSizeToolStripMenuItem"
+        Me.EraserSizeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EraserSizeToolStripMenuItem.Text = "Eraser Size"
+        '
+        'DefaultSizeToolStripMenuItem
+        '
+        Me.DefaultSizeToolStripMenuItem.Name = "DefaultSizeToolStripMenuItem"
+        Me.DefaultSizeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DefaultSizeToolStripMenuItem.Text = "Default Eraser"
+        '
+        'MediumEraserToolStripMenuItem
+        '
+        Me.MediumEraserToolStripMenuItem.Name = "MediumEraserToolStripMenuItem"
+        Me.MediumEraserToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MediumEraserToolStripMenuItem.Text = "Medium Eraser"
+        '
+        'LargeEraserToolStripMenuItem
+        '
+        Me.LargeEraserToolStripMenuItem.Name = "LargeEraserToolStripMenuItem"
+        Me.LargeEraserToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LargeEraserToolStripMenuItem.Text = "Large Eraser"
+        '
+        'FineEraserToolStripMenuItem
+        '
+        Me.FineEraserToolStripMenuItem.Name = "FineEraserToolStripMenuItem"
+        Me.FineEraserToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FineEraserToolStripMenuItem.Text = "Fine Eraser"
+        '
         'DIO_EtchASketch_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,4 +332,13 @@ Partial Class DIO_EtchASketch_Form
     Friend WithEvents HelpToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ColorDialogSelect As ColorDialog
+    Friend WithEvents BrushSizeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DefaultBrushToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MediumBrushToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LargeBrushToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EraserSizeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DefaultSizeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MediumEraserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LargeEraserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FineEraserToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -156,6 +156,7 @@ Public Class DIO_EtchASketch_Form
 
     End Sub
     Public Sub DIO_EtchASketch_Form_keypress(sender As Object, e As KeyEventArgs) Handles CanvasBox.KeyUp
+        'allows access keys. If statements determine what each set key does.
         If e.KeyCode = Keys.Enter Then
             DrawWaveforms()
         End If
@@ -185,6 +186,35 @@ Public Class DIO_EtchASketch_Form
         End If
 
     End Sub
+
+    Private Sub DefaultBrushToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultBrushToolStripMenuItem.Click
+        paintBrush.Width = 1
+    End Sub
+
+    Private Sub MediumBrushToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MediumBrushToolStripMenuItem.Click
+        paintBrush.Width = 5
+    End Sub
+
+    Private Sub LargeBrushToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LargeBrushToolStripMenuItem.Click
+        paintBrush.Width = 20
+    End Sub
+
+    Private Sub DefaultSizeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultSizeToolStripMenuItem.Click
+        wipeOff.Width = 20
+    End Sub
+
+    Private Sub MediumEraserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MediumEraserToolStripMenuItem.Click
+        wipeOff.Width = 40
+    End Sub
+
+    Private Sub LargeEraserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LargeEraserToolStripMenuItem.Click
+        wipeOff.Width = 70
+    End Sub
+
+    Private Sub FineEraserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FineEraserToolStripMenuItem.Click
+        wipeOff.Width = 4
+    End Sub
+
     Sub ClearBoard()
         Dim dialogOne As MsgBoxResult
         dialogOne = MsgBox("CLEARING!!!!!!")
