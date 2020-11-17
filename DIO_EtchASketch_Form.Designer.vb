@@ -29,8 +29,6 @@ Partial Class DIO_EtchASketch_Form
         Me.clearButton = New System.Windows.Forms.Button()
         Me.CanvasBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,6 +37,7 @@ Partial Class DIO_EtchASketch_Form
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.FileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,6 +46,8 @@ Partial Class DIO_EtchASketch_Form
         Me.ClearToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ColorDialogSelect = New System.Windows.Forms.ColorDialog()
         CType(Me.CanvasBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -54,7 +55,7 @@ Partial Class DIO_EtchASketch_Form
         '
         'exitButton
         '
-        Me.exitButton.Location = New System.Drawing.Point(659, 346)
+        Me.exitButton.Location = New System.Drawing.Point(659, 338)
         Me.exitButton.Name = "exitButton"
         Me.exitButton.Size = New System.Drawing.Size(109, 49)
         Me.exitButton.TabIndex = 0
@@ -110,12 +111,6 @@ Partial Class DIO_EtchASketch_Form
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1, Me.EditToolStripMenuItem1, Me.HelpToolStripMenuItem1})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 70)
-        '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
@@ -126,7 +121,7 @@ Partial Class DIO_EtchASketch_Form
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(93, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EditToolStripMenuItem
@@ -145,13 +140,13 @@ Partial Class DIO_EtchASketch_Form
         'DrawWaveformToolStripMenuItem
         '
         Me.DrawWaveformToolStripMenuItem.Name = "DrawWaveformToolStripMenuItem"
-        Me.DrawWaveformToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DrawWaveformToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.DrawWaveformToolStripMenuItem.Text = "Draw Waveform"
         '
         'ClearToolStripMenuItem
         '
         Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
-        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ClearToolStripMenuItem.Text = "Clear"
         '
         'HelpToolStripMenuItem
@@ -164,8 +159,14 @@ Partial Class DIO_EtchASketch_Form
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1, Me.EditToolStripMenuItem1, Me.HelpToolStripMenuItem1})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 70)
         '
         'FileToolStripMenuItem1
         '
@@ -177,7 +178,7 @@ Partial Class DIO_EtchASketch_Form
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(93, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'EditToolStripMenuItem1
@@ -190,19 +191,19 @@ Partial Class DIO_EtchASketch_Form
         'SelectColorToolStripMenuItem1
         '
         Me.SelectColorToolStripMenuItem1.Name = "SelectColorToolStripMenuItem1"
-        Me.SelectColorToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.SelectColorToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
         Me.SelectColorToolStripMenuItem1.Text = "Select Color"
         '
         'DrawWaveformToolStripMenuItem1
         '
         Me.DrawWaveformToolStripMenuItem1.Name = "DrawWaveformToolStripMenuItem1"
-        Me.DrawWaveformToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.DrawWaveformToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
         Me.DrawWaveformToolStripMenuItem1.Text = "Draw Waveform"
         '
         'ClearToolStripMenuItem1
         '
         Me.ClearToolStripMenuItem1.Name = "ClearToolStripMenuItem1"
-        Me.ClearToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ClearToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
         Me.ClearToolStripMenuItem1.Text = "Clear"
         '
         'HelpToolStripMenuItem1
@@ -215,7 +216,7 @@ Partial Class DIO_EtchASketch_Form
         'AboutToolStripMenuItem1
         '
         Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
-        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
         '
         'DIO_EtchASketch_Form
@@ -265,4 +266,5 @@ Partial Class DIO_EtchASketch_Form
     Friend WithEvents ClearToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ColorDialogSelect As ColorDialog
 End Class
