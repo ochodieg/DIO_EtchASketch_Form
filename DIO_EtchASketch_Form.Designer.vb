@@ -55,7 +55,7 @@ Partial Class DIO_EtchASketch_Form
         '
         'exitButton
         '
-        Me.exitButton.Location = New System.Drawing.Point(659, 338)
+        Me.exitButton.Location = New System.Drawing.Point(719, 335)
         Me.exitButton.Name = "exitButton"
         Me.exitButton.Size = New System.Drawing.Size(109, 49)
         Me.exitButton.TabIndex = 0
@@ -65,7 +65,7 @@ Partial Class DIO_EtchASketch_Form
         '
         'selectcolorButton
         '
-        Me.selectcolorButton.Location = New System.Drawing.Point(659, 57)
+        Me.selectcolorButton.Location = New System.Drawing.Point(719, 54)
         Me.selectcolorButton.Name = "selectcolorButton"
         Me.selectcolorButton.Size = New System.Drawing.Size(109, 49)
         Me.selectcolorButton.TabIndex = 1
@@ -75,7 +75,7 @@ Partial Class DIO_EtchASketch_Form
         '
         'drawwaveformsButton
         '
-        Me.drawwaveformsButton.Location = New System.Drawing.Point(659, 154)
+        Me.drawwaveformsButton.Location = New System.Drawing.Point(719, 151)
         Me.drawwaveformsButton.Name = "drawwaveformsButton"
         Me.drawwaveformsButton.Size = New System.Drawing.Size(109, 49)
         Me.drawwaveformsButton.TabIndex = 2
@@ -85,7 +85,7 @@ Partial Class DIO_EtchASketch_Form
         '
         'clearButton
         '
-        Me.clearButton.Location = New System.Drawing.Point(659, 249)
+        Me.clearButton.Location = New System.Drawing.Point(719, 246)
         Me.clearButton.Name = "clearButton"
         Me.clearButton.Size = New System.Drawing.Size(109, 49)
         Me.clearButton.TabIndex = 3
@@ -100,14 +100,14 @@ Partial Class DIO_EtchASketch_Form
         Me.CanvasBox.Size = New System.Drawing.Size(625, 411)
         Me.CanvasBox.TabIndex = 4
         Me.CanvasBox.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.CanvasBox, "Draw some shit.")
+        Me.ToolTip1.SetToolTip(Me.CanvasBox, "Draw someTHING!")
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(873, 24)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -134,7 +134,7 @@ Partial Class DIO_EtchASketch_Form
         'SelectColorToolStripMenuItem
         '
         Me.SelectColorToolStripMenuItem.Name = "SelectColorToolStripMenuItem"
-        Me.SelectColorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SelectColorToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.SelectColorToolStripMenuItem.Text = "Select Color"
         '
         'DrawWaveformToolStripMenuItem
@@ -223,7 +223,7 @@ Partial Class DIO_EtchASketch_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(873, 450)
         Me.Controls.Add(Me.CanvasBox)
         Me.Controls.Add(Me.clearButton)
         Me.Controls.Add(Me.drawwaveformsButton)

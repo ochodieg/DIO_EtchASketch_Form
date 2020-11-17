@@ -123,7 +123,6 @@ Public Class DIO_EtchASketch_Form
             'Draws Graph Lines
         Next
     End Sub
-
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Exitshiz()
     End Sub
@@ -142,15 +141,53 @@ Public Class DIO_EtchASketch_Form
     Private Sub SelectColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectColorToolStripMenuItem.Click
         ColorSelect()
     End Sub
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Dim dialog As MsgBoxResult
+        dialog = MsgBox("Draw with left mouse button." & vbNewLine &
+            "Erase with right mouse button." & vbNewLine & vbNewLine &
+            "Select your color with mouse wheel button." & vbNewLine &
+            "If you don't have one, then use" & vbNewLine &
+        "color menu option or 'shift' key. " & vbNewLine & vbNewLine &
+        "Press 'enter' key to draw waveforms," & vbNewLine &
+        "'Space' key to erase board," & vbNewLine & "'A' key to increase brush size and 'Z' key to decrease brush size" _
+        & vbNewLine & "Press 'S' key to set brush to default size" & vbNewLine &
+        "Brush size can also be set through 'Edit menu." & vbNewLine & vbNewLine &
+        "Press 'Esc' key to exit program.")
 
-    'Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-    '    Dim dialog As MsgBoxResult
-    '    dialog = MsgBox()
-    'End Sub
+    End Sub
+    Public Sub DIO_EtchASketch_Form_keypress(sender As Object, e As KeyEventArgs) Handles CanvasBox.KeyUp
+        If e.KeyCode = Keys.Enter Then
+            DrawWaveforms()
+        End If
+
+        If e.KeyCode = Keys.Escape Then
+            Exitshiz()
+        End If
+
+        If e.KeyCode = Keys.Space Then
+            ClearBoard()
+        End If
+
+        If e.KeyCode = Keys.ShiftKey Then
+            ColorSelect()
+        End If
+
+        If e.KeyCode = Keys.A Then
+            paintBrush.Width += 2
+        End If
+
+        If e.KeyCode = Keys.Z Then
+            paintBrush.Width -= 2
+        End If
+
+        If e.KeyCode = Keys.S Then
+            paintBrush.Width = 1
+        End If
+
+    End Sub
     Sub ClearBoard()
         Dim dialogOne As MsgBoxResult
         dialogOne = MsgBox("CLEARING!!!!!!")
-        'This For loop 'shakes' the drawing picturebox.
         For i = 1 To 100
             CanvasBox.Left = CanvasBox.Left + 5
             CanvasBox.Top = CanvasBox.Top + 5
@@ -187,11 +224,10 @@ Public Class DIO_EtchASketch_Form
         Next
         Dim dialog As MsgBoxResult
         dialog = MsgBox("all clear :>")
-
-        'Clears the graphics.
         If visuals IsNot Nothing Then
             visuals.Clear(Color.FromName("Control"))
         End If
+        'Prompts message, shakes canvas, and clears the graphics.
     End Sub
     'Sub Leftclick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
     '    '"e" is dimed as mouse event argument where mouse event arguments contain mouse info like: position, click, button pressed ..etc.
