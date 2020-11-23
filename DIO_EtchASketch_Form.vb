@@ -6,7 +6,7 @@ Option Explicit On
 'EtchASketch_Form
 'https://github.com/ochodieg/DIO_EtchASketch_Form
 
-Public Class DIO_EtchASketch_Form
+Public Class DIO_EtchASketch_Form ' PascalCase - TJR
     Dim xCoordinate, yCoordinate As Integer
     Dim visuals As System.Drawing.Graphics
     Dim paintBrush As New System.Drawing.Pen(Color.Black, 1)
@@ -37,7 +37,7 @@ Public Class DIO_EtchASketch_Form
         xCoordinate = x
         yCoordinate = y
     End Sub
-    Sub delete(x As Integer, y As Integer)
+    Sub delete(x As Integer, y As Integer) 'PascalCase
         visuals = CanvasBox.CreateGraphics
         If xCoordinate = Nothing Then
             visuals.DrawLine(wipeOff, x, y, x, y)
@@ -74,7 +74,7 @@ Public Class DIO_EtchASketch_Form
     Public Sub ClearButton_Click(sender As Object, e As EventArgs) Handles clearButton.Click
         ClearBoard()
     End Sub
-    Private Sub DrawwaveformsButton_Click(sender As Object, e As EventArgs) Handles drawwaveformsButton.Click
+    Private Sub DrawwaveformsButton_Click(sender As Object, e As EventArgs) Handles drawwaveformsButton.Click ' PascalCase - TJR
         'Clears Graphics before calling upon the DrawWaveforms sub
         If visuals IsNot Nothing Then
             visuals.Clear(Color.FromName("Control"))
@@ -86,10 +86,10 @@ Public Class DIO_EtchASketch_Form
         Dim y As Double
         Dim xCoordinateTwo As Integer
         Dim yCoordinateTwo As Integer
-        Dim GraphLine As New System.Drawing.Pen(Color.Black, 1)
-        Dim SineWave As New System.Drawing.Pen(Color.Black, 3)
-        Dim CoSineWave As New System.Drawing.Pen(Color.Red, 3)
-        Dim TangentWave As New System.Drawing.Pen(Color.Blue, 3)
+        Dim GraphLine As New System.Drawing.Pen(Color.Black, 1) ' camelCase - TJR
+        Dim SineWave As New System.Drawing.Pen(Color.Black, 3) ' camelCase - TJR
+        Dim CoSineWave As New System.Drawing.Pen(Color.Red, 3) ' camelCase - TJR
+        Dim TangentWave As New System.Drawing.Pen(Color.Blue, 3) ' camelCase - TJR
         visuals = CanvasBox.CreateGraphics
         For Cycles As Double = 0 To 1000
             y = Math.Sin(Cycles / 400 * 2 * Math.PI) * 100 + 150
@@ -157,6 +157,9 @@ Public Class DIO_EtchASketch_Form
 
     End Sub
     Public Sub DIO_EtchASketch_Form_keypress(sender As Object, e As KeyEventArgs) Handles CanvasBox.KeyUp
+        'Access Keys are assigned by putting an "&" in the control text property. 
+        'Example "E&xit" assigns Alt+x as the access key for the Exit Button - TJR
+
         'allows access keys. If statements determine what each set key does.
         If e.KeyCode = Keys.Enter Then
             DrawWaveforms()
@@ -260,17 +263,7 @@ Public Class DIO_EtchASketch_Form
         End If
         'Prompts message, shakes canvas, and clears the graphics.
     End Sub
-    'Sub Leftclick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
-    '    '"e" is dimed as mouse event argument where mouse event arguments contain mouse info like: position, click, button pressed ..etc.
-    '    If e.Button = MouseButtons.Right Then
-    '        'If e.Button.ToString = "right" Then 
-    '        'if mouse button clicked is the right mouse button.
-    '        ContextMenuStrip.Show()
-    '        ContextMenuStrip.Location = MousePosition
-    '        'allows the context menu strip to appear where the position of the mouse was when right mouse button was clicked
 
-    '    End If
-
-    'End Sub
+    'Remove commented code - TJR
 
 End Class
